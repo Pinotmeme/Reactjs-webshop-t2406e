@@ -1,0 +1,32 @@
+/java23-project               # Thư mục gốc của dự án Spring Boot
+│── /src
+│   ├── /main
+│   │   ├── /java/com/example/java23  # Code Java backend
+│   │   │   ├── JavaController.java
+│   │   │   ├── JavaService.java
+│   │   │   └── JavaRepository.java
+│   │   ├── /resources
+│   │   │   ├── /static  # Đây là nơi chứa React sau khi build
+│   │   │   ├── application.properties
+│   │   │   └── application.yml
+│   │   ├── /test  # Thư mục chứa test
+│   │   └── /templates  # Nếu sử dụng Thymeleaf
+│── /frontend              # Thư mục React đặt bên trong dự án Java
+│   ├── /node_modules
+│   ├── /public
+│   ├── /src
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── styles/
+│   │   └── services/
+│   ├── .gitignore
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   └── vite.config.js (nếu dùng Vite thay vì CRA)
+│── /target  # Thư mục chứa file build của Spring Boot
+│── .gitignore
+│── pom.xml  # Nếu dùng Maven
+│── build.gradle  # Nếu dùng Gradle
