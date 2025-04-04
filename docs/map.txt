@@ -30,4 +30,7 @@
 │── .gitignore
 │── pom.xml  # Nếu dùng Maven
 │── build.gradle  # Nếu dùng Gradle
+<<<<<<< HEAD
 hello
+=======
+>>>>>>> 8a0b4cc (first commit)
