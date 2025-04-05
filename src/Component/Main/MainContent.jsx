@@ -3,7 +3,7 @@ import React from "react";
 const MainContent = () => {
   return (
     <main className="main">
-      <section>
+      <section className="hero section dark-background">
 
       </section>
     </main>
