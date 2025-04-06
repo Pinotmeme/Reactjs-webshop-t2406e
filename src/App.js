@@ -12,8 +12,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AdminLayout from './admin/AdminLayout';
 import Admin from './admin/Manufacturer'; // Adjust the path if needed
 import HomePage from './Pages/Home/HomePage';
-import Header from './component/Main/Header';
-import Footer from './component/Main/Footer';
+import Header from './Component/Header/Header';
+import Footer from './Component/Footer/Footer';
 
 function App() {
   return (
@@ -22,8 +22,8 @@ function App() {
         <Route path="/admin" element={<AdminLayout />} />
         {/* <Route path="/admin/manufacturer" element={<Manufactuer />}/> */}
         <Route path="/" index element={<HomePage />} />
-        <Route path="/component/Header" element={<Header />} />
-        <Route path="/component/Footer" element={<Footer />} />
+        <Route path="/Component/Header" element={<Header />} />
+        <Route path="/Component/Footer" element={<Footer />} />
 
       </Routes>
     </BrowserRouter>
