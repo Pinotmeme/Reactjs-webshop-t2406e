@@ -1,0 +1,20 @@
+- Bước 1: Đổi tên thư mục tạm thời
+Sao chép
+Chỉnh sửa
+git mv src/Component src/component-temp
+
+- Bước 2: Đổi sang tên mong muốn
+Sao chép
+Chỉnh sửa
+git mv src/component-temp src/Components
+
+- Bước 3: Add và commit
+Sao chép
+Chỉnh sửa
+git add .
+git commit -m "Đổi tên thư mục Component → Components"
+
+- Bước 4: Push lên repository
+Sao chép
+Chỉnh sửa
+git push
