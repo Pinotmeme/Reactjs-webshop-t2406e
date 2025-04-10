@@ -11,25 +11,23 @@
 │   │   │   └── application.yml
 │   │   ├── /test  # Thư mục chứa test
 │   │   └── /templates  # Nếu sử dụng Thymeleaf
-│── /frontend              # Thư mục React đặt bên trong dự án Java
-│   ├── /node_modules
-│   ├── /public
-│   ├── /src
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── styles/
-│   │   └── services/
-│   ├── .gitignore
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── README.md
-│   └── vite.config.js (nếu dùng Vite thay vì CRA)
-│── /target  # Thư mục chứa file build của Spring Boot
-│── .gitignore
-│── pom.xml  # Nếu dùng Maven
-│── build.gradle  # Nếu dùng Gradle
+📁 frontend/
+├── 📁 public/
+│   └── index.html
+├── 📁 src/
+│   ├── 📁 assets/               <-- Hình ảnh, font, icon
+│   ├── 📁 components/          <-- Component UI dùng lại nhiều lần
+│   ├── 📁 pages/               <-- Các trang chính (Home, ProductDetail, Cart, Checkout, ...)
+│   ├── 📁 services/            <-- Gọi API (axios)
+│   ├── 📁 context/             <-- Context API cho Auth, Cart...
+│   ├── 📁 utils/               <-- Hàm tiện ích dùng chung
+│   ├── 📁 routes/              <-- Định tuyến React Router
+│   ├── 📄 App.js
+│   ├── 📄 index.js
+│   └── 📄 bootstrap.min.css    <-- (hoặc cài qua npm)
+├── 📄 package.json
+├── 📄 .env                    <-- API URL, cổng, v.v.
+└── 📄 README.md
 <<<<<<< HEAD
 hello
 =======
