@@ -1,0 +1,65 @@
+/* components/CategoriesSlider/CategoriesSlider.css */
+.categories-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f8f9fa;
+  }
+  
+  .category-item {
+    flex: 0 0 250px;
+  }
+  
+  .category-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 300px;
+    background-color: #f8f9fa;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .category-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .products-count {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  /* Scrollbar styling */
+  .categories-scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .categories-scroll-container::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 10px;
+  }
+  
+  .categories-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .category-item {
+      flex: 0 0 200px;
+    }
+    
+    .category-card {
+      height: 250px;
+    }
+    
+    .category-card img {
+      height: 150px;
+    }
+  }

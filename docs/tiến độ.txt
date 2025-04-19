@@ -1,0 +1,7 @@
+-ProductGrid vẫn cần nâng cấp thêm
+- Heaeder : thêm thanh search ở giữa, logo truyền về home , còn lại chuyển thành icon đặt bên phải
+- thiếu ProductSales
+- thiếu Category trên header
+- thiếu cart , contact ,login
+- thiếu btn đưa về đầu trang
+- chỉnh lại carousel nhỏ lại mà ko ảnh hưởng đến img
