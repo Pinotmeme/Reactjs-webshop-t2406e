@@ -5,4 +5,5 @@ git add .
 2. tạo commit mới (bắt buộc)
 git commit -m ""
 
-3. 
+3. git push
+
