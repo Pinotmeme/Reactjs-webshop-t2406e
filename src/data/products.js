@@ -9,8 +9,8 @@ const productsData = [
       category: "Cây để bàn",
       description: "Cây cảnh văn phòng dễ chăm sóc, lọc không khí hiệu quả...",
       image: [
-        "/images/hero_1.jpg",
-        "/images/hero_2.jpg",
+        // "/images/hero_1.jpg",
+        // "/images/hero_2.jpg",
         "/images/hero_3.jpg"
       ],
       inStock: true,

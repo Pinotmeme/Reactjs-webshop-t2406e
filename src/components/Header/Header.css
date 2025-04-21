@@ -1,112 +1,128 @@
-/* components/Header/Header.css */
-/* Màu chính */
-:root {
-    --primary-color: #28a745;
-    --navlink-font: 'Open Sans', sans-serif;
+/* Custom styles */
+.modal-backdrop.show {
+  opacity: 0.9 !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
-.header-logo {
-    transition: transform 0.3s ease;
+.modal-content {
+  border-radius: 0;
+  border: none;
 }
 
-.header-logo:hover {
-    transform: scale(1.03);
+.modal-body .nav-link {
+  color: #333 !important;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
-.navbar {
-    transition: all 0.3s ease-in-out;
-    background: transparent !important;
+.modal-body .nav-link:hover {
+  color: #0d6efd !important;
+  padding-left: 1.5rem;
 }
 
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.74) !important;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Hover khi trỏ vào option */
 .nav-link {
-    font-family: var(--navlink-font);
-    font-weight: var(--navlink-weight);
-    letter-spacing: var(--navlink-spacing);
-    font-size: 1.25rem;
-    color: #2c3e50 !important;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    padding: 8px 15px !important;
-    margin: 0 10px;
-    position: relative;
-    animation: navItemEnter 0.6s ease forwards;
-    /* Chạy animation 0.6s */
-    animation-delay: calc(var(--index) * 0.1s);
-    /* Trễ theo thứ tự */
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    transform: translateY(-2px);
-    color: var(--primary-color) !important;
-    text-shadow: 0 2px 8px rgba(46, 204, 113, 0.2);
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
 }
 
-.nav-link::before {
-    /* Hiệu ứng background hover */
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(46, 204, 113, 0.1);
-    border-radius: 50px;
-    transform: translate(-50%, -50%);
-    transition: all 0.4s ease;
-    z-index: -1;
+.nav-link:hover::after {
+  width: 100%;
 }
 
-.nav-link:hover::before {
-    width: calc(100% + 20px);
-    height: calc(100% + 10px);
+.btn-outline-primary {
+  border-color: #0d6efd;
+  color: #0d6efd;
 }
 
-/* Active state */
-.nav-link.active {
-    color: var(--primary-color) !important;
-    transform: scale(1.05);
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
 }
 
-/* 1. Định nghĩa chuyển động */
-@keyframes navItemEnter {
-    0% { 
-        opacity: 0;         /* Bắt đầu ẩn */
-        transform: translateY(10px); /* Dịch xuống 10px */
-    }
-    100% { 
-        opacity: 1;         /* Hiện hoàn toàn */
-        transform: translateY(0); /* Về vị trí gốc */
-    }
+.modal-header .input-group {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 991px) {
-    .navbar-collapse {
-        padding-top: 15px;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
+.modal-header .form-control {
+  height: 45px;
+  padding: 0 15px;
+  border-color: #ddd;
+  border-radius: 25px; /* Bo tròn form tìm kiếm */
+  padding-right: 50px; /* Tăng khoảng cách bên phải để chứa nút */
+}
 
-    .nav-link {
-        margin: 8px 0;
-        font-size: 1.1rem;
-        padding: 10px 15px;
-        border-radius: 5px;
-        color: #333 !important;
-    }
+.modal-header .btn-outline-primary {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: #ddd;
+  background-color: #f8f9fa;
+  border-radius: 50%; /* Bo tròn nút tìm kiếm */
+}
 
-    .d-flex {
-        flex-direction: column;
-    }
+.modal-header .btn-outline-primary:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.modal-header .btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Bo tròn nút tìm kiếm trong modal */
+}
+
+.modal-body .nav-link {
+  font-size: 1rem;
+  color: #333 !important;
+  transition: all 0.2s ease;
+}
+
+.modal-body .nav-link:hover {
+  background-color: #f8f9fa;
+  padding-left: 20px;
+}
+
+/* modal mobile */
+.modal-backdrop-mobile {
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 @media (min-width: 992px) {
-    .navbar-collapse {
-        flex-grow: 0;
-    }
+  .modal-backdrop-mobile {
+    display: none !important;
+  }
+}
+
+.d-flex .form-control {
+  border-radius: 25px 0 0 25px; /* Bo tròn góc trái của form tìm kiếm desktop */
+  padding-right: 50px; /* Tăng khoảng cách bên phải để chứa nút */
+}
+
+.d-flex .btn-outline-primary {
+  border-radius: 50%; /* Bo tròn nút tìm kiếm */
+}
+
+.d-flex .btn-outline-primary,
+.d-flex .btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-end .me-3 {
+  margin-right: 1rem;
 }
