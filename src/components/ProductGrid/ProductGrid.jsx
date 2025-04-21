@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Card, Button, Row, Col, Container, Badge } from "react-bootstrap";
 import { FaStar, FaEye, FaShoppingCart } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ProductGrid.css";
 
 export default function ProductGrid({ products = [] }) {

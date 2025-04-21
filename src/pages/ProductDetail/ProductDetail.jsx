@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Card, Breadcrumb, Badge } from 'react-bootstrap';
-import { FaStar, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
-import productsData from '../data/products'; // Giả sử có file dữ liệu sản phẩm
+import { FaStar, FaShoppingCart } from 'react-icons/fa';
+import productsData from '../../data/products'; // Giả sử có file dữ liệu sản phẩm
 import './ProductDetail.css';
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -40,16 +40,6 @@ const ProductDetailPage = () => {
         </Breadcrumb.Item>
         <Breadcrumb.Item active>{product.name}</Breadcrumb.Item>
       </Breadcrumb>
-
-      <Button 
-        variant="outline-secondary" 
-        as={Link} 
-        to="/" 
-        className="mb-4"
-      >
-        <FaArrowLeft className="me-2" />
-        Back to Products
-      </Button>
 
       <Row className="g-4">
         {/* Product Images */}

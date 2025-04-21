@@ -1,65 +1,51 @@
-/* components/CategoriesSlider/CategoriesSlider.css */
-.categories-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 1.5rem;
-    padding-bottom: 1rem;
-    scrollbar-width: thin;
-    scrollbar-color: #007bff #f8f9fa;
-  }
-  
-  .category-item {
-    flex: 0 0 250px;
-  }
-  
-  .category-card {
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    height: 300px;
-    background-color: #f8f9fa;
-  }
-  
-  .category-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .category-card img {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .products-count {
-    color: #6c757d;
-    font-size: 0.9rem;
-  }
-  
-  /* Scrollbar styling */
-  .categories-scroll-container::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .categories-scroll-container::-webkit-scrollbar-track {
-    background: #f8f9fa;
-    border-radius: 10px;
-  }
-  
-  .categories-scroll-container::-webkit-scrollbar-thumb {
-    background-color: #007bff;
-    border-radius: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    .category-item {
-      flex: 0 0 200px;
-    }
-    
-    .category-card {
-      height: 250px;
-    }
-    
-    .category-card img {
-      height: 150px;
-    }
-  }
+/* CategoriesSlider.css */
+
+.category-slider {
+  position: relative;
+}
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  border: 1px solid #dee2e6;
+}
+
+.custom-carousel .carousel-control-prev-icon,
+.custom-carousel .carousel-control-next-icon {
+  background-size: 70% 70%;
+}
+
+/* Hover vào nút: nền xanh dương nhạt */
+.custom-carousel .carousel-control-prev:hover,
+.custom-carousel .carousel-control-next:hover {
+  background-color: rgb(0, 123, 255);
+  border-color: rgba(0, 123, 255, 0.5);
+}
+
+/* Card bo góc + hover đẹp */
+.category-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Ảnh trong card có hiệu ứng zoom nhẹ */
+.category-card-img {
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-card-img {
+  transform: scale(1.05);
+}
