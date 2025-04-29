@@ -9,7 +9,10 @@ const Header = () => {
     { path: "/", label: "Home" },
     { path: "/category", label: "Category" },
     { path: "/checkout", label: "Checkout" },
+<<<<<<< HEAD
     { path: "/blog", label: "Blog" },
+=======
+>>>>>>> b56a399ea4c8b7f18d1f57733d291aac287ba82b
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
   ];

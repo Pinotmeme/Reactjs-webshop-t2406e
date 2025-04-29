@@ -10,7 +10,11 @@ const CartDetail = () => {
       name: 'Product 1',
       price: 45.99,
       quantity: 2,
+<<<<<<< HEAD
       image: 'images/hero_1.jpg'
+=======
+      image: 'https://via.placeholder.com/100'
+>>>>>>> b56a399ea4c8b7f18d1f57733d291aac287ba82b
     },
     {
       id: 2,
@@ -27,6 +31,7 @@ const CartDetail = () => {
 
   return (
     <Container className="my-5">
+<<<<<<< HEAD
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
@@ -39,6 +44,9 @@ const CartDetail = () => {
       </nav>
 
       <h2 className="mb-4">Cart</h2>
+=======
+      <h1 className="mb-4">Shopping Cart</h1>
+>>>>>>> b56a399ea4c8b7f18d1f57733d291aac287ba82b
       
       <Row className="g-4">
         {/* Product List Column */}
@@ -97,7 +105,11 @@ const CartDetail = () => {
         <Col md={4}>
           <Card className="shadow-sm">
             <Card.Body>
+<<<<<<< HEAD
               <h4 className="mb-4">Cart T</h4>
+=======
+              <h4 className="mb-4">Order Summary</h4>
+>>>>>>> b56a399ea4c8b7f18d1f57733d291aac287ba82b
               
               <ListGroup variant="flush">
                 <ListGroup.Item className="d-flex justify-content-between align-items-center px-0">

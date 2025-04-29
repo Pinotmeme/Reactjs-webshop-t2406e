@@ -2,7 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Card, Breadcrumb, Badge } from 'react-bootstrap';
+<<<<<<< HEAD
 import { FaStar, FaShoppingCart } from 'react-icons/fa';
+=======
+import { FaStar, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
+>>>>>>> b56a399ea4c8b7f18d1f57733d291aac287ba82b
 import productsData from '../../data/products'; // Giả sử có file dữ liệu sản phẩm
 import './ProductDetail.css';
 const ProductDetailPage = () => {
