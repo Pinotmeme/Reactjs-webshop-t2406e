@@ -4,29 +4,13 @@
   position: relative;
 }
 
-.custom-carousel .carousel-control-prev,
-.custom-carousel .carousel-control-next {
+.custom-nav-btn {
   width: 40px;
   height: 40px;
-  background: white;
-  color: black;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.8;
-  border: 1px solid #dee2e6;
-}
-
-.custom-carousel .carousel-control-prev-icon,
-.custom-carousel .carousel-control-next-icon {
-  background-size: 70% 70%;
-}
-
-/* Hover vào nút: nền xanh dương nhạt */
-.custom-carousel .carousel-control-prev:hover,
-.custom-carousel .carousel-control-next:hover {
-  background-color: rgb(0, 123, 255);
-  border-color: rgba(0, 123, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
 }
 
 /* Card bo góc + hover đẹp */
@@ -41,11 +25,73 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Ảnh trong card có hiệu ứng zoom nhẹ */
 .category-card-img {
   transition: transform 0.3s ease;
 }
 
 .category-card:hover .category-card-img {
   transform: scale(1.05);
+}
+
+.nav-position {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-left {
+  left: -20px;
+}
+
+.nav-right {
+  right: -20px;
+}
+
+/* Responsive cho mobile - có thể ẩn hoặc đưa gần lại */
+@media (max-width: 768px) {
+  .nav-left {
+    left: 0;
+  }
+  .nav-right {
+    right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Trong mỗi slide (Carousel.Item), chỉ hiển thị 1 card đầu tiên */
+  .custom-carousel .carousel-item .row > div:nth-child(n+2) {
+    display: none;
+  }
+
+  /* Card đầu tiên chiếm toàn bộ chiều rộng */
+  .custom-carousel .carousel-item .row > div:first-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Đảm bảo ảnh và card chiếm đúng không gian */
+  .category-card {
+    width: 100%;
+  }
+
+  .category-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Nút điều hướng đẩy vào gần mép */
+  .nav-left {
+    left: 5px !important;
+  }
+
+  .nav-right {
+    right: 5px !important;
+  }
 }

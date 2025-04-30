@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
-import CategoryPage from "./pages/CategoryPage";
+import CategoryPage from "./pages/Category/CategoryPage";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import CartDetail from "./pages/Cart/CartDetail";
 // import ContactPage from './pages/ContactPage';
@@ -18,7 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/categories/:id" element={<CategoryPage />} />
+        <Route path="/category/:id" element={<CategoryPage />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/cart-detail" element={<CartDetail />} />
         {/* <Route path="/contact" element={<ContactPage />} /> */}
@@ -28,5 +28,4 @@ function App() {
     </Router>
   );
 }
-// xin chao
 export default App;
