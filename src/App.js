@@ -1,5 +1,5 @@
 // App.js
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -11,8 +11,18 @@ import CartDetail from "./pages/Cart/CartDetail";
 // import LoginPage from './pages/LoginPage';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { fetchCategories } from "./api/fetchCategories";
 
-function App() {
+const App = () =>  {
+  useEffect(() => {
+    fetchCategories().then(res=>{
+      console.log("Categories ",res);
+    }).catch(err=>{
+
+  })
+},[]);
+
+
   return (
     <Router>
       <Header />
@@ -28,4 +38,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
