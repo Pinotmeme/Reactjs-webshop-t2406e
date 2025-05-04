@@ -1,39 +1,50 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from 'react'
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import "./CategoryPage.css";
+import content from '../../data/content.json';
+import { getAllProducts } from '../../api/fetchProduct';
+import { useDispatch, useSelector } from 'react-redux';
+const categories = content?.categories;
 
-const categories = [
-  { name: "Cây để bàn", slug: "cay-de-ban" },
-  { name: "Chậu trồng cây", slug: "chau-trong-cay" },
-  { name: "Dụng cụ làm vườn", slug: "dung-cu-lam-vuon" },
-  { name: "Đất trồng cây", slug: "dat-trong-cay" },
-  { name: "Hạt giống", slug: "hat-giong" },
-  { name: "Phân bón dưỡng chất", slug: "phan-bon" },
-  { name: "Thiết bị tưới", slug: "thiet-bi-tuoi" },
-  { name: "Thương hiệu", slug: "thuong-hieu" },
-  { name: "Thủy sinh", slug: "thuy-sinh" },
-  { name: "Trang trí sân vườn", slug: "trang-tri-san-vuon" },
-];
-
-const CategoryPage = () => {
+ 
+const CategoryPage = ({categoryType}) => {
   const navigate = useNavigate();
   const { slug } = useParams();
 
   // ✅ Thêm state lưu option sắp xếp
   const [sortOption, setSortOption] = React.useState("default");
 
-  // ✅ Dữ liệu mẫu (cần thay thế bằng API thực tế)
-  const sampleProducts = [
-    { name: "Cây bạc hà socola", price: 128000, image: "/images/hero_1.jpg" },
-    { name: "Cây bạc hà táo", price: 45000, image: "/images/hero_2.jpg" },
-    { name: "Cây bạch đàn chanh", price: 180000, image: "/images/hero_3.jpg" },
-    { name: "Cây bàng Singapore", price: 300000, image: "/images/hero_1.jpg" },
-  ];
+  const categoryData = useSelector((state)=> state?.categoryState?.categories);
+  const [products,setProducts] = useState([]);
+
+  const categoryContent = useMemo(()=>{
+    return categories?.find((category)=> category.code === categoryType);
+  },[categoryType]);
+  
+  const productListItems = useMemo(()=>{
+    return content?.products?.filter((product)=> product?.category_id === categoryContent?.id );
+  },[categoryContent]);
+
+  const category = useMemo(()=>{
+    return categoryData?.find(element => element?.code === categoryType);
+  },[categoryData, categoryType]);
+
+  useEffect(()=>{
+    getAllProducts(category?.id).then(res=>{
+      setProducts(res);
+    }).catch(err=>{
+      
+    }).finally(()=>{
+    })
+    
+  },[category?.id]);
+
+
 
   // ✅ Hàm sắp xếp theo lựa chọn người dùng
   const sortedProducts = React.useMemo(() => {
-    const products = [...sampleProducts]; // sao chép để không làm thay đổi dữ liệu gốc
+    const products = []; // sao chép để không làm thay đổi dữ liệu gốc
     switch (sortOption) {
       case "price_asc":
         return products.sort((a, b) => a.price - b.price);
@@ -113,3 +124,5 @@ const CategoryPage = () => {
 };
 
 export default CategoryPage;
+
+

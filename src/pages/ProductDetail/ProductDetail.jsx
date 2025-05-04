@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Card, Breadcrumb, Badge } from 'react-bootstrap';
 import { FaStar, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
-import productsData from '../../data/products'; // Giả sử có file dữ liệu sản phẩm
+import content from '../../data/content.json'; // Giả sử có file dữ liệu sản phẩm
 import './ProductDetail.css';
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -15,7 +15,7 @@ const ProductDetailPage = () => {
     // Giả lập API call
     const fetchProduct = async () => {
       try {
-        const foundProduct = productsData.find(p => p.id === parseInt(id));
+        const foundProduct = content?.find(p => p.id === parseInt(id));
         if (!foundProduct) throw new Error('Product not found');
         setProduct(foundProduct);
       } catch (err) {

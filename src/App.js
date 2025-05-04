@@ -12,11 +12,16 @@ import CartDetail from "./pages/Cart/CartDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { fetchCategories } from "./api/fetchCategories";
+import { loadCategories } from "./store/features/category";
+import { useDispatch } from "react-redux";  
 
 const App = () =>  {
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
     fetchCategories().then(res=>{
-      console.log("Categories ",res);
+      dispatch(loadCategories(res));
     }).catch(err=>{
 
   })

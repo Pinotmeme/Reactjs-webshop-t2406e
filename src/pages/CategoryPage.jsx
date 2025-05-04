@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 const CategoryPage = () => {
   const { id } = useParams(); // Lấy ID danh mục từ URL
+  
 
   return (
     <div className="category-page">

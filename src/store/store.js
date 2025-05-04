@@ -1,17 +1,17 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import productReducer from '.features/product.js';
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import productReducer from './features/products'
 import cartReducer from './features/cart';
 import categoryReducer from './features/category';
 
 
-const rootReducter = combineReducers({
+const rootReducer = combineReducers({
     productState: productReducer,
     cartState: cartReducer,
     categoryState: categoryReducer
 })
 
 const store = configureStore({
-    reducer: rootReducter
+    reducer: rootReducer
 })
 
 export default store;
