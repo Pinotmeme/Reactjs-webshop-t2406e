@@ -1,4 +1,4 @@
-// components/CategoriesSlider/index.jsx
+// slide danh muc san pham
 import React from "react";
 import { Card, Carousel, Container, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -9,18 +9,19 @@ const CategoriesSlider = () => {
   const navigate = useNavigate();
 
   const categories = [
-    { id: 1, name: "Cây để bàn", image: "/images/hero_1.jpg" },
-    { id: 2, name: "Cây nội thất", image: "/images/hero_2.jpg" },
-    { id: 3, name: "Cây phong thủy", image: "/images/hero_3.jpg" },
-    { id: 4, name: "Chậu cảnh", image: "/images/hero_1.jpg" },
-    { id: 5, name: "Chậu mini", image: "/images/hero_2.jpg" },
-    { id: 6, name: "Cây treo tường", image: "/images/hero_3.jpg" },
-    { id: 7, name: "Cây ngoài trời", image: "/images/hero_1.jpg" },
-    { id: 8, name: "Cây thủy sinh", image: "/images/hero_3.jpg" },
+    { id: 1, name: "Cây giống", slug: "cay-giong", image: "/images/hero_1.jpg" },
+    { id: 2, name: "Chậu trồng cây", slug: "chau-trong-cay", image: "/images/hero_2.jpg" },
+    { id: 3, name: "Dụng cụ làm vườn", slug: "dung-cu-lam-vuon", image: "/images/hero_3.jpg" },
+    { id: 4, name: "Đất trồng cây", slug: "dat-trong-cay", image: "/images/hero_1.jpg" },
+    { id: 5, name: "Hạt giống", slug: "hat-giong", image: "/images/hero_2.jpg" },
+    { id: 6, name: "Phân bón dưỡng chất", slug: "phan-bon-duong-chat", image: "/images/hero_3.jpg" },
+    { id: 7, name: "Thiết bị tưới", slug: "thiet-bi-tuoi", image: "/images/hero_1.jpg" },
+    { id: 8, name: "Thủy sinh", slug: "thuy-sinh", image: "/images/hero_3.jpg" },
+    { id: 9, name: "Trang trí sân vườn", slug: "trang-tri-san-vuon", image: "/images/hero_2.jpg" }
   ];
 
-  const handleCategoryClick = (categoryId) => {
-    navigate(`/category/${categoryId}`);
+  const handleCategoryClick = (slug) => {
+    navigate(`/${slug}`);
   };
 
   // Group categories into arrays of 4 categories each
@@ -76,7 +77,7 @@ const CategoriesSlider = () => {
                     >
                       <Card
                         className="border-0 bg-transparent h-100 category-card"
-                        onClick={() => handleCategoryClick(category.id)}
+                        onClick={() => handleCategoryClick(category.slug)}
                       >
                         <div className="ratio ratio-1x1 overflow-hidden rounded-4">
                           <Card.Img

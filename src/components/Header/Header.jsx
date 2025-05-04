@@ -6,11 +6,10 @@ import "./Header.css";
 
 const Header = () => {
   const NAV_ITEMS = [
-    { path: "/", label: "Home" },
-    { path: "/category/:id", label: "Category" },
-    { path: "/checkout", label: "Checkout" },
-    { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" },
+    { path: "/", label: "Trang chủ" },
+    { path: "/category", label: "Danh mục" },
+    { path: "/about", label: "Giới thiệu" },
+    { path: "/contact", label: "Liên hệ" },
   ];
 
   const [showMobileMenu, setShowMobileMenu] = useState(false); 

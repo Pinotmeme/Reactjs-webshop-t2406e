@@ -5,6 +5,7 @@ import CategoriesSlider from "../components/CategoriesSlider/CategoriesSlider";
 import ProductGrid from "../components/ProductGrid/ProductGrid";
 import ServiceSection from "../components/ServiceSection/ServiceSection";
 import FeaturedPosts from "../components/FeaturedPosts/FeaturedPosts";
+import ScrollToTopButton from "../components/ScrollTopBtn/ScrollTopBtn";
 
 // Thêm dữ liệu mẫu
 const products = [
@@ -47,6 +48,7 @@ const HomePage = () => {
         <CategoriesSlider />
         <ProductGrid products={products} />
       </div>
+      <ScrollToTopButton/> {/* Nút cuộn lên đầu trang */} 
 
       <ServiceSection />
       <FeaturedPosts />

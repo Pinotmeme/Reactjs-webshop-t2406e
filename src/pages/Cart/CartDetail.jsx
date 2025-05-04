@@ -64,11 +64,11 @@ const CartDetail = () => {
                           <Col md={3} className="mt-2 mt-md-0">
                             <div className="d-flex align-items-center">
                               <Button variant="outline-secondary" size="sm">
-                                -
+                                <i className="bi bi-dash"></i>
                               </Button>
                               <span className="mx-2">{item.quantity}</span>
                               <Button variant="outline-secondary" size="sm">
-                                +
+                                <i className="bi bi-plus"></i>
                               </Button>
                             </div>
                           </Col>
