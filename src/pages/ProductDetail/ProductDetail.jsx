@@ -5,6 +5,7 @@ import { Container, Row, Col, Button, Card, Breadcrumb, Badge } from 'react-boot
 import { FaStar, FaShoppingCart, FaArrowLeft } from 'react-icons/fa';
 import content from '../../data/content.json'; // Giả sử có file dữ liệu sản phẩm
 import './ProductDetail.css';
+import productsData from '../../data/product';
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -15,7 +16,7 @@ const ProductDetailPage = () => {
     // Giả lập API call
     const fetchProduct = async () => {
       try {
-        const foundProduct = content?.find(p => p.id === parseInt(id));
+        const foundProduct = productsData?.find(p => p.id === parseInt(id));
         if (!foundProduct) throw new Error('Product not found');
         setProduct(foundProduct);
       } catch (err) {
@@ -87,6 +88,9 @@ const ProductDetailPage = () => {
               <Button variant="primary" size="lg" className="flex-grow-1">
                 <FaShoppingCart className="me-2" />
                 Add to Cart
+              </Button>
+              <Button variant="success" size="lg" className="flex-grow-1">
+                Buy
               </Button>
             </div>
 
